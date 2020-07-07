@@ -1,18 +1,22 @@
 <template>
   <v-app>
-      <div class="d-flex align-center nav">
-        <router-link to="/">Home</router-link>
-        <router-link to="/curriculum/upsert">Create</router-link>
-      </div>
-      <v-content>
-        <router-view />
-      </v-content>
+    <top-nav />
+      <v-main>
+        <v-container>
+          <router-view />
+        </v-container>
+      </v-main>
   </v-app>
 </template>
 
 <script>
+import TopNav from '@/components/TopNav'
+
 export default {
   name: 'App',
+  components: {
+    TopNav
+  },
   data: () => ({
     //
   })
