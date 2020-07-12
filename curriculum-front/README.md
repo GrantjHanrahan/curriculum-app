@@ -1,34 +1,17 @@
 # curriculum-front
 
-## Project setup
-```
-npm install
-```
+## Running Locally
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+1. Clone this repo
+1. `cd curriculum-front`
+1. `npm i`
+1. `npm run serve`
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## Tech Stack
 
-### Run your unit tests
-```
-npm run test:unit
-```
+1. Vue.js/Vue Router/Vuex
+1. Vuetify
+1. Node.js/Express.js
+1. MongoDB/Mongoose
+1. Digital Ocean (hosting)
 
-### Run your end-to-end tests
-```
-npm run test:e2e
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
