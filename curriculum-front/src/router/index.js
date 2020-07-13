@@ -15,7 +15,7 @@ const routes = [
   },
   {
     path: '/curricula',
-    name: 'Home',
+    name: 'curricula',
     component: DisplayCurricula
   },
   {

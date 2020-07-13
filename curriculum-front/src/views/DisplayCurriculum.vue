@@ -1,12 +1,10 @@
-/* eslint-disable vue/valid-v-model */
-/* eslint-disable vue/valid-v-model */
 <template>
   <v-row no-gutters class="display-curriculum-page">
     <v-col md="6" offset-md="3" sm="8" offset-sm="2">
       <v-row>
         <v-col>
-          <h1>Display Curricula</h1>
-          <p>This is a description... his is a description... his is a description... his is a description...</p>
+          <h1>{{ selectedCurriculum.name }}</h1>
+          <p>{{ selectedCurriculum.description }}</p>
         </v-col>
       </v-row>
       <v-row>
@@ -105,9 +103,23 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
-  data: () => ({
-    settings: []
-  })
+  name: 'DisplayCurriculum',
+  data () {
+    return {
+      selectedCurriculum: {}
+    }
+  },
+  computed: {
+    ...mapState(['curriculaData'])
+  },
+  mounted () {
+    this.selectedCurriculum = this.curriculaData.find((curriculum) => {
+      console.log(this.curriculaData)
+      return curriculum.id === this.$route.params.id
+    })
+  }
 }
 </script>

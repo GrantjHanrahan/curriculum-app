@@ -6,8 +6,10 @@
       <v-btn>Create New</v-btn>
       </div>
       <div class="curricula-list">
-        <v-card class="curriculum-card" outlined v-for="curriculum in parsedData" :key="curriculum.id">
-          <v-card-title class="headline">{{ curriculum.name }}</v-card-title>
+        <v-card class="curriculum-card" outlined v-for="curriculum in curriculaData" :key="curriculum.id">
+          <v-card-title class="headline">
+            <router-link :to="`/curricula/${curriculum.id}`">{{ curriculum.name }}</router-link>
+            </v-card-title>
           <v-card-subtitle>{{ curriculum.description }}</v-card-subtitle>
         </v-card>
       </div>
@@ -16,14 +18,15 @@
 </template>
 
 <script>
-import curriculaData from '@/data/curricula.json'
+import { mapState } from 'vuex'
 
 export default {
   name: 'DisplayCurricula',
   data () {
-    return {
-      parsedData: curriculaData
-    }
+    return {}
+  },
+  computed: {
+    ...mapState(['curriculaData'])
   }
 }
 </script>
